@@ -1,0 +1,87 @@
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+class TestTheInternetAuthentication(unittest.TestCase):
+
+    URL = "https://the-internet.herokuapp.com/login"
+
+    USERNAME_INPUT_SELECTOR = (By.CSS_SELECTOR, "#username")
+    PASSWORD_INPUT_SELECTOR = (By.CSS_SELECTOR, "#password")
+    LOGIN_BUTTON_SELECTOR = (By.XPATH, "//i[contains(text(),'Login')]")
+    FLASH_CONTAINER_SELECTOR = (By.XPATH, "//*[@id='flash']")
+
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(3)
+        self.driver.maximize_window()
+        self.driver.get(self.URL)
+
+    def tearDown(self):
+        self.driver.quit()
+
+    @unittest.skip
+    def test_random(self):
+        print("Sunt in test skip")
+
+    def test_negative_scenario(self):
+        # finding element
+        username_element = self.driver.find_element(*self.USERNAME_INPUT_SELECTOR)
+        password_element = self.driver.find_element(*self.PASSWORD_INPUT_SELECTOR)
+        login_button_element = self.driver.find_element(*self.LOGIN_BUTTON_SELECTOR)
+
+        # actions
+        username_element.click()
+        username_element.clear()
+        username_element.send_keys("bogdan")
+
+        password_element.click()
+        password_element.clear()
+        password_element.send_keys("tmta21")
+
+        login_button_element.click()
+
+        # for the moment this line of code is used only to wait for this element to be present
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.FLASH_CONTAINER_SELECTOR))
+
+        text_container_element = self.driver.find_element(*self.FLASH_CONTAINER_SELECTOR)
+        text_container_element_message = text_container_element.text
+
+        self.assertIn(
+            "Your username is invalid!",
+            text_container_element_message,
+            "Message is not the same for negative scenario"
+        )
+
+    def test_positive_scenario(self):
+        # finding element
+        username_element = self.driver.find_element(*self.USERNAME_INPUT_SELECTOR)
+        password_element = self.driver.find_element(*self.PASSWORD_INPUT_SELECTOR)
+        login_button_element = self.driver.find_element(*self.LOGIN_BUTTON_SELECTOR)
+
+        # actions
+        username_element.click()
+        username_element.clear()
+        username_element.send_keys("tomsmith")
+
+        password_element.click()
+        password_element.clear()
+        password_element.send_keys("SuperSecretPassword!")
+
+        login_button_element.click()
+
+        # for the moment this line of code is used only to wait for this element to be present
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.FLASH_CONTAINER_SELECTOR))
+
+        text_container_element = self.driver.find_element(*self.FLASH_CONTAINER_SELECTOR)
+        text_container_element_message = text_container_element.text
+
+        self.assertIn(
+            "You logged into a secure area!",
+            text_container_element_message,
+            "Message is not the same for positive scenario"
+        )
