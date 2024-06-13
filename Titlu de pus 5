@@ -1,0 +1,31 @@
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+class TestTheInternetCheckboxes(unittest.TestCase):
+
+    URL = "https://the-internet.herokuapp.com/checkboxes"
+
+    CHECKBOX_1_SELECTOR = (By.CSS_SELECTOR, "form#checkboxes > input:nth-of-type(1)")
+    CHECKBOX_2_SELECTOR = (By.CSS_SELECTOR, "form#checkboxes > input:nth-of-type(2)")
+
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(3)
+        self.driver.maximize_window()
+        self.driver.get(self.URL)
+
+    def tearDown(self):
+        self.driver.quit()
+
+    def test_click_checkbox1(self):
+        # finding element
+        checkbox_1_element = self.driver.find_element(*self.CHECKBOX_1_SELECTOR)
+
+        # actions
+        checkbox_1_element.click()
+        self.assertTrue(checkbox_1_element.is_selected(), "Checkbox 1 IS NOT selector after clicking on it")
