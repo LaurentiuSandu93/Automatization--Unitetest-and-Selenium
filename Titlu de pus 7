@@ -1,0 +1,26 @@
+import unittest
+import HtmlTestRunner
+
+from sesiunea_11 import TestTheInternetAuthentication
+from sesiunea_11_2 import TestTheInternetCheckboxes
+from sesiunea_12 import TestTheInternetAlerts
+
+class TestSuite(unittest.TestCase):
+
+    def test_suite(self):
+
+        teste_de_rulat = unittest.TestSuite()
+
+        teste_de_rulat.addTests([
+            unittest.defaultTestLoader.loadTestsFromTestCase(TestTheInternetAuthentication),
+            unittest.defaultTestLoader.loadTestsFromTestCase(TestTheInternetCheckboxes),
+            unittest.defaultTestLoader.loadTestsFromTestCase(TestTheInternetAlerts)
+        ])
+
+        runner = HtmlTestRunner.HTMLTestRunner(
+            combine_reports=True,
+            report_title='TMTA21',
+            report_name='Daily test result'
+        )
+
+        runner.run(teste_de_rulat)
