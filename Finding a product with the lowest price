@@ -1,0 +1,80 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+#this setting is used to block notification
+chrome_options = Options()
+chrome_options.add_argument("--disable-notifications")
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+#navigate to website
+driver.maximize_window()
+driver.get("https://www.elefant.ro/homepage-mikrosite-cms-home")
+
+#we need to wait to cookie button to appear
+WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.ID, "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll")))
+#after waiting 40 seconds we are 100% sure that this element is there but we try to find it
+cookie_button = driver.find_element(By.ID, "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll").click()
+
+#find the search bar
+search_bar = driver.find_element(By.NAME, "SearchTerm")
+search_bar.click()
+search_bar.send_keys("iphone 14")
+
+#find and click on search button with little magnifier
+search_button = driver.find_element(By.NAME, "search")
+search_button.click()
+
+#wait for products to appear in home page
+#elements that hold product info are found by class name inventory-item
+WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CLASS_NAME, "inventory-item")))
+for i in range(20):
+    driver.execute_script(f"window.scrollTo(0, {i*500});")
+    time.sleep(1)
+
+elements = driver.find_elements(By.CLASS_NAME, "inventory-item")
+
+list_de_produse_gata_finisate = []
+
+#we take all elements in home page and we need to search inside that element for title and price
+print(f"Am gasit un nr de {len(elements)} produse pe pagina")
+for element in elements:
+    try:
+        title_element = element.find_element(By.CLASS_NAME, "product-title")
+        price_element = element.find_element(By.CLASS_NAME, "current-price")
+
+        price_element_text = price_element.text
+        price_element_text = price_element_text.replace("de la ", "")
+        price_with_split = price_element_text.split(" ")
+        price_value_string = price_with_split[0]
+        # 5.257,73 (string) -> 5257.73 (float)
+        # 5257,73
+        price_with_no_comma = price_value_string.replace(".", "")
+        # 5257.73
+        price_with_no_comma2 = price_with_no_comma.replace(",", ".")
+
+        float_price = float(price_with_no_comma2)
+        list_de_produse_gata_finisate.append([title_element.text, float_price])
+    except Exception as e:
+        print(f"Am intampinat o problema {str(e)}")
+
+print(f"Am reusit sa procesez {len(list_de_produse_gata_finisate)} produse")
+
+titlu_produs_cel_mai_mic = ""
+#initializam pret_produs_cel_mai_mic cu prima valoarea din lista noastra
+pret_produs_cel_mai_mic = list_de_produse_gata_finisate[0][1]
+
+for produs in list_de_produse_gata_finisate:
+
+    print(f"{produs[0]} ------ {produs[1]}")
+    if produs[1] < pret_produs_cel_mai_mic:
+        pret_produs_cel_mai_mic = produs[1]
+        titlu_produs_cel_mai_mic = produs[0]
+
+
+print(f"Cel mai mic produs iphone 14 este {titlu_produs_cel_mai_mic} cu pretul de {pret_produs_cel_mai_mic}")
