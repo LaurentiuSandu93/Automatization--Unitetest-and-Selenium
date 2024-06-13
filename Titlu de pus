@@ -1,0 +1,47 @@
+import time
+
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+chrome_options = Options()
+chrome_options.add_argument("--incognito")
+
+driver = webdriver.Chrome(options=chrome_options)
+# first we need to navigate to webpage
+driver.get("https://the-internet.herokuapp.com/login")
+driver.maximize_window()
+
+# finding elements by CSS
+#input_username_element = driver.find_element(By.CSS_SELECTOR, "input#username")
+#input_password_element = driver.find_element(By.CSS_SELECTOR, "input#password")
+#button_login_element = driver.find_element(By.CSS_SELECTOR, "button.radius > i")
+
+# finding elements by XPATH
+input_username_element = driver.find_element(By.XPATH, "//input[@name='username' and @id='username']")
+# putem combina valoarea atributelor cu metode de tip contains
+#input_password_element = driver.find_element(By.XPATH, "//input[@type='password' and contains(text(), 'Password')]")
+input_password_element = driver.find_element(By.XPATH, "//input[@type='password']")
+#button_login_element = driver.find_element(By.XPATH, "//i[contains(text(), 'Login')]")
+button_login_element = driver.find_element(By.XPATH, "//button[@class='radius']/i[contains(text(),'Login')]")
+
+#//*[@id="header-search"]/div/div/div/div[2]/div[3]/a/div/span
+#//span[contains(text(), 'Contul meu')]
+#//span[normalize-space()='Contul meu']
+
+
+# actions
+input_username_element.click()
+input_username_element.send_keys("bogdan")
+
+input_password_element.click()
+input_password_element.send_keys("parolatmta21")
+
+button_login_element.click()
+
+time.sleep(5)
+
+text_container_element = driver.find_element(By.XPATH, "//*[@id='flash']")
+text_container_element_message = text_container_element.text
+
+assert "Your username is invalid!" in text_container_element_message, "Error message is not displayed after negative scenario"
