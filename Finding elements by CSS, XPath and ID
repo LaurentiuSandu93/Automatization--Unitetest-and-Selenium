@@ -1,0 +1,59 @@
+import time
+
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+chrome_options = Options()
+chrome_options.add_argument("--incognito")
+
+driver = webdriver.Chrome(options=chrome_options)
+# first we need to navigate to webpage
+driver.get("https://the-internet.herokuapp.com/login")
+driver.maximize_window()
+
+# find elements region
+# finding elements by classic selectors
+#input_username_element = driver.find_element(By.ID, "username")
+#input_password_element = driver.find_element(By.ID, "password")
+#button_login_element = driver.find_element(By.CLASS_NAME, "radius")
+# by linktext
+# linkul_de_subsol = driver.find_element(By.LINK_TEXT, "Elemental Selenium")
+# linkul_de_subsol = driver.find_element(By.PARTIAL_LINK_TEXT, "Elemental Sel")
+
+
+# finding elements by CSS
+input_username_element = driver.find_element(By.CSS_SELECTOR, "input#username")
+input_password_element = driver.find_element(By.CSS_SELECTOR, "input#password")
+button_login_element = driver.find_element(By.CSS_SELECTOR, "button.radius > i")
+
+# pt checkboxes
+# https://the-internet.herokuapp.com/checkboxes
+# first_checkbox = driver.find_element(By.CSS_SELECTOR, "form#checkboxes > input:nth-of-type(1)")
+# second_checkbox = driver.find_element(By.CSS_SELECTOR, "form#checkboxes > input:nth-of-type(2)")
+#/html/body/div[2]/div/div/form/text()[1]
+#/html/body/div[2]/div/div/form/text()[2]
+
+# path
+#driver.find_element(By.XPATH, "/html/body/div[2]/div/div/form/div[1]/div/input")
+#driver.find_element(By.XPATH, "/html/body/div[2]/div/div/form/div[2]/div/input")
+#driver.find_element(By.XPATH, "//*[@id='password']")
+
+
+# actions
+input_username_element.click()
+input_username_element.send_keys("Laurentiu")
+
+input_password_element.click()
+input_password_element.send_keys("parolatmta21")
+
+button_login_element.click()
+
+time.sleep(5)
+
+text_container_element = driver.find_element(By.ID, "flash")
+text_container_element_message = text_container_element.text
+
+assert "Your username is invalid!" in text_container_element_message, "Error message is not displayed after negative scenario"
+
+-----------------------------------------
