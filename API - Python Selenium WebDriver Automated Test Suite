@@ -1,0 +1,526 @@
+Laur
+laurica5546
+Online
+
+Brinzei Bogdan — 04/24/2024 7:58 PM
+import time
+
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+Expand
+sesiunea_10.py
+2 KB
+Brinzei Bogdan — 04/29/2024 5:57 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Alex Chirila — 04/29/2024 6:00 PM
+Îmi ziceți o parola?
+Nu pot sa intru in platforma
+Brinzei Bogdan — 04/29/2024 6:51 PM
+import unittest
+
+
+class TestTheInternetAuthentication(unittest.TestCase):
+
+Expand
+sesiunea_11.py
+1 KB
+Brinzei Bogdan — 04/29/2024 7:51 PM
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11.py
+4 KB
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11_2.py
+2 KB
+Brinzei Bogdan — 05/08/2024 5:52 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Vali — 05/08/2024 6:05 PM
+Image
+Brinzei Bogdan — 05/08/2024 7:23 PM
+import unittest
+import HtmlTestRunner
+
+from sesiunea_11 import TestTheInternetAuthentication
+from sesiunea_11_2 import TestTheInternetCheckboxes
+Expand
+TestSuite.py
+1 KB
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11_2.py
+2 KB
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11.py
+4 KB
+Brinzei Bogdan — 05/08/2024 8:05 PM
+final version
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11.py
+4 KB
+import unittest
+
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_11_2.py
+2 KB
+import unittest
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+sesiunea_12.py
+2 KB
+import unittest
+import HtmlTestRunner
+
+from sesiunea_11 import TestTheInternetAuthentication
+from sesiunea_11_2 import TestTheInternetCheckboxes
+from sesiunea_12 import TestTheInternetAlerts
+Expand
+TestSuite.py
+1 KB
+Madalin Ionut Cerceloiu — 05/08/2024 8:37 PM
+import unittest
+from selenium.webdriver.common.by import By
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+Expand
+teme_12_1.py
+2 KB
+Cornel M — 05/11/2024 8:05 PM
+A fost postata înregistrarea cursului de miercuri?
+Brinzei Bogdan — 05/11/2024 8:36 PM
+Salut Cornel, am pus-o acum. Poti sa reincerci, te rog?
+MIRABELA — 05/11/2024 9:37 PM
+Nici eu nu reusesc sa ma conectez de cateva zile. Oare s-a schimbat parola?
+Daneasa — 05/12/2024 9:25 AM
+https://bit.ly/41jaCy6    QCiZqsv1Y1iSu9s asta a funcționat săptămâna trecută
+IT Factory
+Vataman Andreea
+grupa-tmta21
+Laur — 05/20/2024 9:41 AM
+Salutare echipa ! Imi puteti spune va rog in ce zile a zis Bogdan ca avem acel test initial, dar  si testul de final de modul ? Multumesc  🙂
+Brinzei Bogdan — 05/20/2024 2:50 PM
+Salut @Laur , testul de la curs il vom da in ultima sesiune adica pe 5 iunie. Testul acreditat il veti da la o data ulterioara (probabil peste o luna) de la finalizarea modului de testare automata
+Laur — 05/20/2024 3:12 PM
+Multumesc mult pentru raspuns 🙂
+Brinzei Bogdan — 05/20/2024 5:55 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Brinzei Bogdan — 05/20/2024 8:01 PM
+Attachment file type: archive
+BDD-tmta21.zip
+21.11 MB
+Brinzei Bogdan — 05/22/2024 5:56 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Alexandra Ciobanu — 05/22/2024 6:07 PM
+Buna nici eu nu pot intra astazi. Merci
+Brinzei Bogdan — 05/22/2024 8:01 PM
+Attachment file type: archive
+BDD-tmta21.zip
+21.17 MB
+Brinzei Bogdan — 05/27/2024 5:57 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Brinzei Bogdan — 05/29/2024 5:55 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Brinzei Bogdan — 05/29/2024 7:36 PM
+Image
+Brinzei Bogdan — 05/30/2024 10:12 AM
+Buna dimineata dragilor, revin cu ce am discutat ieri
+Aveti aici un alt API care merge testat foarte bine https://github.com/vdespa/Postman-Complete-Guide-API-Testing/blob/main/simple-grocery-store-api.md acesta are toate metodele CRUD
+https://restcountries.com/ - acesta are din cate stiu eu doar GET 
+Va las aici si colectia de postman pentru api-ul de aseara (Books)
+Am urcat si vide-ul de aseara pe drive
+
+Zi frumoasa si fara bug-uri 😄
+{
+"info": {
+"_postman_id": "e744f994-12e2-4643-8dc3-3c8a39a437e1",
+"name": "PYTA-Example",
+"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+"_exporter_id": "11673806"
+Expand
+PYTA-Example.postman_collection.json
+6 KB
+GitHub
+Postman-Complete-Guide-API-Testing/simple-grocery-store-api.md at m...
+Contribute to vdespa/Postman-Complete-Guide-API-Testing development by creating an account on GitHub.
+Postman-Complete-Guide-API-Testing/simple-grocery-store-api.md at m...
+iar acesta este site-ul care explica putin despre SQL Injection: https://bobby-tables.com/
+Daneasa — 05/30/2024 10:22 AM
+Mulțumim. O zi deosebită!
+Vali — 05/30/2024 10:27 AM
+Multumim! O zi faina!
+Brinzei Bogdan — 05/30/2024 10:36 AM
+@Mihai Macrea uite despre ce vorbeam aseara cu 404 pe Authentication. Din ratiuni de securitate, se poate alege 404 Not Found cand mailul sau parola sunt gresite
+Image
+Mihai Macrea — 05/30/2024 2:59 PM
+@Brinzei Bogdan  Multumim mult 
+Zi cu spor!
+Mihai Macrea — 05/30/2024 6:20 PM
+Image
+Brinzei Bogdan — 06/03/2024 5:55 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Brinzei Bogdan — 06/05/2024 5:56 PM
+Link intalnire :  https://meet.google.com/ibi-svcy-orv
+Brinzei Bogdan — 06/05/2024 7:18 PM
+Attachment file type: archive
+Books-tmta21.zip
+8.43 MB
+MIRABELA — 06/07/2024 8:52 PM
+Buna Bogdan . Scuze ca nu am reusit sa particip la examen.
+Cand pot sa il dau pe viitor?
+Mi s-a defectat si telefonul, am pierdut toate nr de telefon si nu am avut cum sa anunt. Nu am avut nici internet pe laptop.  Din fericire am vb cu Simina si am rugat o sa anunte ca pot participa.
+Brinzei Bogdan — 06/07/2024 8:55 PM
+Bună @MIRABELA am trimis un mesaj privat cu linkul pentru examen
+Alex Chirila — 06/10/2024 6:23 PM
+mor de ras cu ala :))
+Madalin Ionut Cerceloiu — 06/10/2024 6:25 PM
+🤣  bombardier
+Cornel M — 06/10/2024 6:26 PM
+....
+Madalin Ionut Cerceloiu — 06/10/2024 6:26 PM
+noi cred ca am fost cea mai cuminte si mai serioasa grupa
+Cornel M — 06/10/2024 6:26 PM
+Noroc ca putem da mute si noi
+Alex Chirila — 06/10/2024 6:27 PM
+daca aveam unul ca ala, ar fi fost horror
+Daneasa — 06/10/2024 6:32 PM
+foarte obositor
+Alex Chirila — 06/10/2024 6:56 PM
+slab, nimic wow
+﻿
+{
+	"info": {
+		"_postman_id": "e744f994-12e2-4643-8dc3-3c8a39a437e1",
+		"name": "PYTA-Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11673806"
+	},
+	"item": [
+		{
+			"name": "Spotify",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET /status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/status",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/books",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /books/{book_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/books/1",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /books filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/books?limit=2&type=3",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "type",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api-clients/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"clientName\": \"PYTA4\",\n   \"clientEmail\": \"bogdan@pyta.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/api-clients/",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api-clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /orders/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5cb3bf2c57f0fe733b0bb1feea74d6d3b5f3201f26758a8ab74d384de7b20c5e",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bookId\": 3,\n  \"customerName\": \"PYTA4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5cb3bf2c57f0fe733b0bb1feea74d6d3b5f3201f26758a8ab74d384de7b20c5e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /orders/{order_id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5cb3bf2c57f0fe733b0bb1feea74d6d3b5f3201f26758a8ab74d384de7b20c5e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/WwqzGl3Qc4nUDa0yBRoTx",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						"WwqzGl3Qc4nUDa0yBRoTx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /orders/{order_id}",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5cb3bf2c57f0fe733b0bb1feea74d6d3b5f3201f26758a8ab74d384de7b20c5e",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\": \"Bogdan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/WwqzGl3Qc4nUDa0yBRoTx",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						"WwqzGl3Qc4nUDa0yBRoTx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /orders/{order_id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5cb3bf2c57f0fe733b0bb1feea74d6d3b5f3201f26758a8ab74d384de7b20c5e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/orders/WwqzGl3Qc4nUDa0yBRoTx",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"orders",
+						"WwqzGl3Qc4nUDa0yBRoTx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+PYTA-Example.postman_collection.json
+6 KB
